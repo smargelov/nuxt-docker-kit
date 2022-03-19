@@ -44,14 +44,22 @@ jobs:
       - name: Run tests 🧪
         run: npm run test
 
-  deploy:
-    needs: ci
+  check-env:
+    needs: [ci]
+    outputs:
+      my-key: ${{ steps.my-key.outputs.defined }}
     runs-on: ${{ matrix.os }}
-    if: |
-      ${{ secrets.SSH_PRIVATE_KEY }}
-      && ${{ secrets.SSH_KNOWN_HOSTS }}
-      && ${{ secrets.SSH_DIR }}
-      && ${{ secrets.SSH_USER }}
+    steps:
+      - id: my-key
+        env:
+          MY_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        if: "${{ env.MY_KEY != '' }}"
+        run: echo "::set-output name=defined::true"
+
+  deploy:
+    needs: [check-env]
+    runs-on: ${{ matrix.os }}
+    if: needs.check-env.outputs.my-key == 'true'
 
     strategy:
       matrix:

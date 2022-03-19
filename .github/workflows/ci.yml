@@ -46,9 +46,16 @@ jobs:
 
   check-env:
     needs: [ci]
+
     outputs:
       my-key: ${{ steps.my-key.outputs.defined }}
+
     runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+
     steps:
       - id: my-key
         env:

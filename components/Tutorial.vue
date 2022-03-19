@@ -1,9 +1,11 @@
 <!-- Please remove this file from your project -->
-<template>
-  <h1>Test</h1>
+<template lang='pug'>
+  section.b-tutorial
+    h1._title Test
 </template>
 
 <style lang='sass' scoped>
-h1
-  color: $accent
+.tutorial
+  &__title
+    color: $accent
 </style>

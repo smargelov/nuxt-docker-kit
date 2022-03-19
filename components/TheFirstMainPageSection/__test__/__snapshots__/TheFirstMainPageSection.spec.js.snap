@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheFirstMainPageSection render correctly 1`] = `
+<section
+  class="b-first-block"
+>
+  <h1
+    class="_title"
+  >
+    TEST
+    <span
+      class="_close"
+    >
+      <svgicon
+        class="_icon"
+        height="24"
+        name="close"
+        width="24"
+      />
+    </span>
+  </h1>
+</section>
+`;

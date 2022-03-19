@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheMainFooter render correctly 1`] = `
+<footer
+  class="b-footer"
+>
+  <p
+    class="_test"
+  >
+    FOOTER
+  </p>
+</footer>
+`;

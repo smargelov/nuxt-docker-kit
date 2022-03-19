@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheMainHeader render correctly 1`] = `
+<header
+  class="b-header"
+>
+  <p
+    class="_test"
+  >
+    HEADER
+  </p>
+</header>
+`;
